@@ -11,3 +11,21 @@
     import 'relative/path/to/stylesheet.scss';
 
 */
+.cancion{
+    background-color: rgb(53, 50, 50);
+    height: 35px;
+    color: white;
+    font-size: 12px;
+    border-bottom: 1.5px solid gray;
+}
+.cancion:hover{
+    background-color: gray;
+    color: black;
+}
+
+div{
+    padding: 5px;
+}
+ button{
+     margin-right: 8px ;
+}
