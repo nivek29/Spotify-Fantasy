@@ -2,8 +2,6 @@ import React from "react";
 
 import ListaCanciones from "../component/listaCanciones.js";
 import NavBarCanciones from "../component/navBarCanciones.js";
-import Reproductor from "../component/reproductor.js";
-
 export class Home extends React.Component {
 	constructor() {
 		super();
@@ -15,8 +13,11 @@ export class Home extends React.Component {
 		};
 		this.reproductor = null;
 	}
-	pause(event) {
+	pause() {
 		this.reproductor.pause();
+	}
+	play() {
+		this.reproductor.play();
 	}
 	forwardBackward(event) {
 		if (
@@ -53,7 +54,6 @@ export class Home extends React.Component {
 			console.log("atras");
 		}
 	}
-
 	reproducirCancion(event) {
 		this.reproductor.src = "https://assets.breatheco.de/apis/sound/";
 		this.setState({
@@ -65,7 +65,6 @@ export class Home extends React.Component {
 		this.reproductor.src =
 			"https://assets.breatheco.de/apis/sound/" + this.state.mp3;
 	}
-
 	componentDidMount() {
 		fetch("https://assets.breatheco.de/apis/sound/songs")
 			.then(response => response.json())
@@ -93,6 +92,7 @@ export class Home extends React.Component {
 					<NavBarCanciones
 						forwardBackward={this.forwardBackward.bind(this)}
 						pause={this.pause.bind(this)}
+						play={this.play.bind(this)}
 					/>
 				</div>
 			</div>

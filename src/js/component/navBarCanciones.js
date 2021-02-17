@@ -16,7 +16,7 @@ const NavBarCanciones = props => {
 					<i className="fas fa-pause"></i>
 				</button>
 
-				<button className="btn btn-secondary">
+				<button className="btn btn-secondary" onClick={props.play}>
 					<i className="fas fa-play"></i>
 				</button>
 
@@ -32,6 +32,7 @@ const NavBarCanciones = props => {
 };
 NavBarCanciones.propTypes = {
 	forwardBackward: PropTypes.func,
-	pause: PropTypes.func
+	pause: PropTypes.func,
+	play: PropTypes.func
 };
 export default NavBarCanciones;
